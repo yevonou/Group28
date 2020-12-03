@@ -11,7 +11,7 @@
 # specify imports
 from pathlib import Path
 import numpy as np
-import csv
+import pandas as pd
 
 # specify filepath
 def filepath(pathname, filename): 
@@ -21,11 +21,15 @@ def filepath(pathname, filename):
 
 # read csv
 def load_table(file): 
-    with open(file, newline='') as csvfile: 
-        data_table = csv.reader(csvfile, delimiter='\t')
-        data_table = list(data_table)
-    return data_table
+    data_input = pd.read_csv(file)
+    return data_input
 
 # calculate means
+def column_means(data)
+    data_output = data.mean(axis=0)
+    return data_output
 
 # save new csv
+def save_output(data, file):
+    data.to_csv(file)
+    print('File saved to ', file)
