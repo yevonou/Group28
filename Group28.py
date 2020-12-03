@@ -20,6 +20,10 @@ def filepath(pathname, filename):
     return data_path
 
 # read csv
+def load_table(file): 
+    with open(file, newline='') as csvfile: 
+        data_table = csv.reader(csvfile, delimiter-'')
+    return data_table
 
 # calculate means
 
