@@ -22,7 +22,8 @@ def filepath(pathname, filename):
 # read csv
 def load_table(file): 
     with open(file, newline='') as csvfile: 
-        data_table = csv.reader(csvfile, delimiter-'')
+        data_table = csv.reader(csvfile, delimiter='\t')
+        data_table = list(data_table)
     return data_table
 
 # calculate means
