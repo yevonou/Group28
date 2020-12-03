@@ -25,12 +25,6 @@ def load_table(file):
     return data_input
 
 # calculate means
-with open('testdata.csv')as f:
-    f_csv = csv.reader(f)
-    column=[]
-    for row in f_csv:
-        column.append([row[2] for row in f_csv])
-# save new csv
 def column_means(data):
     data_output = data.mean(axis=1, skipna=True)
     return data_output
